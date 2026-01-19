@@ -27,7 +27,7 @@ public:
 
     mlx.setMode(MLX90640_CHESS);
     mlx.setResolution(MLX90640_ADC_18BIT);
-    mlx.setRefreshRate(MLX90640_8_HZ);
+    mlx.setRefreshRate(MLX90640_4_HZ);
 
     Serial.println("[Camera] ✅ MLX90640 ready");
     return true;
@@ -127,6 +127,8 @@ void setup() {
   Serial.println("\n=== SMART HEATING SYSTEM BOOT ===");
 
   Wire.begin(SDA_PIN, SCL_PIN);
+  Wire.setClock(400000);  // REQUIRED for MLX90640
+
   Serial.println("[System] I2C initialized");
 
   bool cameraOK = camera.begin();
