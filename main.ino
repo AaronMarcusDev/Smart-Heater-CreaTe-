@@ -83,16 +83,20 @@ private:
 class HeaterSystem {
 public:
   void begin() {
-    Serial.println("[Heater] Initializing servo and MOSFET");
+  Serial.println("[Heater] Initializing servo and MOSFET");
 
-    servo.setPeriodHertz(50);
-    servo.attach(SERVO_PIN, 500, 2400);
+  servo.setPeriodHertz(50);
+  servo.attach(SERVO_PIN, 500, 2400);
 
-    pinMode(MOSFET_PIN, OUTPUT);
-    digitalWrite(MOSFET_PIN, LOW);
+  pinMode(MOSFET_PIN, OUTPUT);
+  digitalWrite(MOSFET_PIN, LOW);
 
-    Serial.println("[Heater] ✅ Ready (heater OFF)");
-  }
+  servo.write(90);   // 👈 START CENTERED
+  delay(500);        // let it physically move
+
+  Serial.println("[Heater] ✅ Ready (centered, heater OFF)");
+}
+
 
   void setServoAngle(int angle) {
     servo.write(angle);
