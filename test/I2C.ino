@@ -1,3 +1,5 @@
+// This is for checking the camera connection and where it is located.
+
 #include <Wire.h>
 
 void setup() {

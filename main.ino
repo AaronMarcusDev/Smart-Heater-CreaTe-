@@ -2,17 +2,12 @@
 #include <Adafruit_MLX90640.h>
 #include <ESP32Servo.h>
 
-/* =========================
-   PIN DEFINITIONS
-   ========================= */
 #define SERVO_PIN   18
 #define MOSFET_PIN  17
 #define SDA_PIN     21
 #define SCL_PIN     22
 
-/* =========================
-   CAMERA GRID CLASS
-   ========================= */
+// Camera Grid
 class CameraGrid {
 public:
   static const int WIDTH  = 32;
@@ -77,9 +72,7 @@ private:
   int maxAngle;
 };
 
-/* =========================
-   HEATER + FAN CLASS
-   ========================= */
+// Heater & Fan System
 class HeaterSystem {
 public:
   void begin() {
@@ -114,21 +107,17 @@ private:
   Servo servo;
 };
 
-/* =========================
-   GLOBAL OBJECTS
-   ========================= */
+// Global Objects
 CameraGrid camera;
 TargetMapper mapper(30, 150);   // safe servo limits
 HeaterSystem heater;
 
-/* =========================
-   SETUP
-   ========================= */
+// main (setup)
 void setup() {
   Serial.begin(115200);
   delay(1000); // allow serial to settle
 
-  Serial.println("\n=== SMART HEATING SYSTEM BOOT ===");
+  Serial.println("\n=== SMART HEATING SYSTEM STARTUP ===");
 
   Wire.begin(SDA_PIN, SCL_PIN);
   Wire.setClock(400000);  // REQUIRED for MLX90640
@@ -145,9 +134,7 @@ void setup() {
   Serial.println("[System] Setup complete");
 }
 
-/* =========================
-   MAIN LOOP
-   ========================= */
+// runtime / loop
 void loop() {
   static unsigned long lastToggle = 0;
   static bool heaterState = false;
@@ -166,7 +153,7 @@ void loop() {
     }
   }
 
-  /* ---- CAMERA PROCESSING (NON-BLOCKING) ---- */
+  // Camera Data Processing
   if (camera.readFrame()) {
     int hottestPixel = camera.getHottestPixel();
     int x = camera.indexToX(hottestPixel);
