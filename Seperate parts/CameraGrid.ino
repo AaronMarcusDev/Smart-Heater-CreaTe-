@@ -1,4 +1,4 @@
-lass CameraGrid {
+class CameraGrid {
 public:
   static const int WIDTH  = 32;
   static const int HEIGHT = 24;
