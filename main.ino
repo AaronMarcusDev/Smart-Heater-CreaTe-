@@ -22,7 +22,7 @@ public:
 
     mlx.setMode(MLX90640_CHESS);
     mlx.setResolution(MLX90640_ADC_18BIT);
-    mlx.setRefreshRate(MLX90640_4_HZ);
+    mlx.setRefreshRate(MLX90640_4_HZ); // four times per second it outputs a frame
 
     Serial.println("[Camera] ✅ MLX90640 ready");
     return true;
@@ -55,9 +55,7 @@ private:
   float frame[WIDTH * HEIGHT];
 };
 
-/* =========================
-   TARGET MAPPER CLASS
-   ========================= */
+// Target Mapper
 class TargetMapper {
 public:
   TargetMapper(int minAngle, int maxAngle)
@@ -140,17 +138,18 @@ void loop() {
   static bool heaterState = false;
 
   /* ---- HEATER TOGGLE (INDEPENDENT) ---- */
-  if (millis() - lastToggle > 3000) {
-    lastToggle = millis();
-    heaterState = !heaterState;
+  // if (millis() - lastToggle > 3000) {
+  //   lastToggle = millis();
+  //   heaterState = !heaterState;
 
-    if (heaterState) {
-      heater.heaterOn();
-      Serial.println("[Heater] 🔥 ON");
-    } else {
-      heater.heaterOff();
-      Serial.println("[Heater] ❄️ OFF");
-    }
+  //   if (heaterState) {
+  //     heater.heaterOn();
+  //     Serial.println("[Heater] 🔥 ON");
+  //   } else {
+  //     heater.heaterOff();
+  //     Serial.println("[Heater] ❄️ OFF");
+  //   }
+    heater.heaterOn();
   }
 
   // Camera Data Processing

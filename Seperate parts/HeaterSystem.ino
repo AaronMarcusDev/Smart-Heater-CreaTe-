@@ -1,4 +1,4 @@
-lass HeaterSystem {
+class HeaterSystem {
 public:
   void begin() {
     servo.setPeriodHertz(50);
