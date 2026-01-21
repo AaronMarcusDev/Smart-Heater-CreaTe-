@@ -21,8 +21,9 @@ Main (.ino)
 ```
 
 ## Important Images and Schematics
-**ESP32 Devkit (Transmitter)**
-<img src="https://esp32.implrust.com/esp32-intro/images/ESP32-DevKit-V1-Pinout-Diagram.png" width="400">
-**ESP32S3 (Reciever)**
-<img src="https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/2.jpg" width="400">
+**ESP32 Devkit (Transmitter)**\
+<img src="https://esp32.implrust.com/esp32-intro/images/ESP32-DevKit-V1-Pinout-Diagram.png" width="400">\
+**ESP32S3 (Reciever)**\
+<img src="https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/img/2.jpg" width="400">\
+**Schematic**\
 <img src="./images/schematic.jpeg" width="400">
