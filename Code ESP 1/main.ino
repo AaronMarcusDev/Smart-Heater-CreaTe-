@@ -149,7 +149,8 @@ void loop() {
   //     heater.heaterOff();
   //     Serial.println("[Heater] ❄️ OFF");
   //   }
-    heater.heaterOn();
+    heater.heaterOn(); // Lets just keep it on for now, it does stop at first in the setup(),
+    //                    But it might be worth the time saving of writing a controller for it.
   }
 
   // Camera Data Processing
