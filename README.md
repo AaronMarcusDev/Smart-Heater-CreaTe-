@@ -19,3 +19,8 @@ Main (.ino)
     ├── controls servo
     └── controls heater & fan (MOSFET)
 ```
+
+## Important Images and Schematics
+<img src="https://esp32.implrust.com/esp32-intro/images/ESP32-DevKit-V1-Pinout-Diagram.png" width="400">
+<br>
+<img src="./images/schematic.jpeg" width="400">
