@@ -1,4 +1,4 @@
-// This is for the ESP 2 (The TinyC6)
+//! THIS IS ALSO IN THE FINAL MAIN INO FILE BUT IS NOT LISTED ON GITHUB!!!
 
 #include <Wire.h>
 

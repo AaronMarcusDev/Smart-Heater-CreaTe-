@@ -1,3 +1,5 @@
+// You can run this as a little test after you are sure the camera over I^2C is working on 0x33
+// Check the test folder for more info.
 #include <Wire.h>
 #include <Adafruit_MLX90640.h>
 

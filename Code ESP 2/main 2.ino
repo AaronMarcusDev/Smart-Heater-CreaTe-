@@ -12,6 +12,8 @@
 //     }
 // };
 
+// Currently not in use
+
 #include <Servo.h>
 
 class Receiver {

@@ -1,7 +1,7 @@
 #include <ESP32Servo.h>
 
 Servo heaterServo;
-int servoPin = 18;
+int servoPin = 18; // Or whatever pin that has pwm!
 
 void setup() {
   heaterServo.setPeriodHertz(50);

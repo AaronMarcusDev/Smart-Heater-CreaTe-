@@ -1,3 +1,4 @@
+// Currently not in use
 class Transmitter
 {
 public:

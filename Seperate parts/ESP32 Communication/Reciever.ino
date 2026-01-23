@@ -1,3 +1,4 @@
+// Currently not in use
 class Receiver {
 public:
     void begin(int txPin, int rxPin, unsigned long baud = 115200) {
